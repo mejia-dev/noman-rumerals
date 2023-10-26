@@ -21,7 +21,7 @@ Code: let numberTotal = "";
 Test: "It will interate through a foreach loop on each numeral, evaluate the numeral using the word rules below, then append output to numberTotal"
 Code: evalNumerals("III")
 After converting to lowercase, after splitting: 
-["i","i","i"].forEach(function(letter) {
+["i","i","i"].forEach(function(letter,pos) {
   *run rules, return "resultNumber"*
   numberTotal.append(resultNumber + " + ");
 })
