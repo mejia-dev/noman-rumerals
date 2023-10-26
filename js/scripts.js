@@ -1,5 +1,6 @@
 function evalNumerals(input) {
-  let numberTotal = "";
+  const ivxlcdmValues = {i: 1,v: 5,x: 10,l: 50, c: 100,d: 500, m: 1000}
+  let numberTotal = 0;
   let errorCounter = 0;
   let recentErrorMessage = "";
   input = input.toLowerCase();
@@ -26,18 +27,18 @@ function evalNumerals(input) {
   numeralsList.forEach(function (letter, pos) {
     if (["i", "x", "c", "m"].includes(letter)) {
       // Test Line Below, remove later
-      const ixcmValues = { i: 1, x: 10, c: 100, m: 1000 };
+      
 
       numberTotal += "This number is ixcm: " + pos + ". ";
     } else if (["v", "l", "d"].includes(letter)) {
-      const vldValues = { v: 5, l: 50, d: 500 };
+      
       let charBefore = numeralsList[pos - 1];
       let charAfter = numeralsList[pos + 1];
       if ((charAfter === charBefore) && (charBefore != undefined) && (charAfter != undefined)) {
         errorCounter += 1;
         recentErrorMessage += "Error " + errorCounter + ": Invalid input. Numeral " + letter.toUpperCase() + " should never be surrounded by two of the same numerals. "
       } else {
-        numberTotal += vldValues[letter];
+        numberTotal += ivxlcdmValues[letter];
       }
     }
   })
