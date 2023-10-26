@@ -1,12 +1,27 @@
 function evalNumerals(input) {
-  if (!input.match(/^[ivxlcdm]+$/i)) {
-    return "Invalid Roman numerals detected. Please check your input and try again."
-  }
-  input = input.toLowerCase();
-  const numeralsList = input.split("");
   let numberTotal = "";
   let errorCounter = 0;
   let recentErrorMessage = "";
+  input = input.toLowerCase();
+
+  if (!input.match(/^[ivxlcdm]+$/i)) {
+    return "Invalid Roman numerals detected. Please check your input and try again."
+  } else if (input.includes("vv")) {
+    return "Invalid input. Numeral V should only occur once per input."
+  } else if (input.includes("ll")) {
+    return "Invalid input. Numeral L should only occur once per input."
+  } else if (input.includes("dd")) { 
+    return "Invalid input. Numeral D should only occur once per input."
+  }
+
+  const numeralsList = input.split("");
+
+  const duplicateVLDValuesCheck = ["v", "l", "d"]
+  for (let i = 0; i < numeralsList.length; i++) {
+    if (numeralsList[i] === "") {
+
+    }
+  }
 
   numeralsList.forEach(function (letter, pos) {
     if (["i", "x", "c", "m"].includes(letter)) {
