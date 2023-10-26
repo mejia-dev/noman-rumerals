@@ -156,9 +156,9 @@ Test: "It will reject the entire input if the number of D's is greater than 1 an
 Code: evalNumerals("DD")
 Expected Output: "Invalid input. Numeral D should only occur once per input"
 
-Test: "It will reject the entire input if L is surrounded by two matching characters"
+Test: "It will reject the entire input if D is surrounded by two matching characters"
 Code: evalNumerals("CDC")
-Expected Output: "Invalid input. Numeral L should never be surrounded by two of the same numerals"
+Expected Output: "Invalid input. Numeral D should never be surrounded by two of the same numerals"
 
 
 //// Rules for M
