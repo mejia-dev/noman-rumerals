@@ -27,18 +27,32 @@ function evalNumerals(input) {
   numeralsList.forEach(function (letter, pos) {
     if (["i", "x", "c", "m"].includes(letter)) {
       // Test Line Below, remove later
-      
-
       numberTotal += "This number is ixcm: " + pos + ". ";
-    } else if (["v", "l", "d"].includes(letter)) {
+
       
+    } else if (["v", "l", "d"].includes(letter)) {
       let charBefore = numeralsList[pos - 1];
       let charAfter = numeralsList[pos + 1];
+      // After and before equal the same thing AND are not undefined
       if ((charAfter === charBefore) && (charBefore != undefined) && (charAfter != undefined)) {
         errorCounter += 1;
         recentErrorMessage += "Error " + errorCounter + ": Invalid input. Numeral " + letter.toUpperCase() + " should never be surrounded by two of the same numerals. "
-      } else {
+      } 
+      // After and before are both undefined
+      else if ((charBefore === undefined) && (charAfter === undefined)) {
         numberTotal += ivxlcdmValues[letter];
+      }
+      // After and before are greater than
+      else if ((ivxlcdmValues[charBefore] > ivxlcdmValues[letter]) && (ivxlcdmValues[charAfter] > ivxlcdmValues[letter]) ) {
+        numberTotal -= ivxlcdmValues[letter];
+      } 
+      // (Before is greater than OR before is undefined) AND (after is less than OR after is undefined)
+      else if (((ivxlcdmValues[charBefore] > ivxlcdmValues[letter]) || (charBefore === undefined)) && ((ivxlcdmValues[charAfter] < ivxlcdmValues[letter]) || (charAfter === undefined)) ) {
+        numberTotal += ivxlcdmValues[letter];
+      } 
+      // After is greater than
+      else if ((ivxlcdmValues[charAfter] > ivxlcdmValues[letter])) {
+        numberTotal -= ivxlcdmValues[letter];
       }
     }
   })
