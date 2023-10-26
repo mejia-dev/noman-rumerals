@@ -117,6 +117,35 @@ Code: evalNumerals("CLC")
 Expected Output: "Invalid input. Numeral L should never be surrounded by two of the same numerals"
 
 
+//// Rules for C
+Test: "It will evaluate any C without a character after it to equal 100"
+Code: evalNumerals(C)
+Expected Output: 100
+
+Test: "It will evaluate any C with another C after it to equal 200"
+Code: evalNumerals("CC")
+Expected Output: 200
+
+Test: "It will evaluate any C with two C's after it to equal 300"
+Code: evalNumerals("CCC")
+Expected Output: 300
+
+Test: "It will reject the entire input if the number of C's in a row is greater than 3 and will display an error"
+Code: evalNumerals("CCCC")
+Expected Output: "Invalid input. More than three occurences of C in a row detected."
+
+Test: "It will evaluate any C with a non-C,X,V,or I character after it to equal -100"
+Code: evalNumerals("CD");
+Expected Output: -100
+
+Test: "It will evaluate any C with a L,X,V,or I character after it to equal 100"
+Code: evalNumerals("CI");
+Expected Output: 101
+
+Test: "It will reject the entire input if C is surrounded by two matching characters"
+Code: evalNumerals("ICI")
+Expected Output: "Invalid input. Numeral C should never be surrounded by two of the same numerals"
+
 
 
 Test: "It will evaluate 
