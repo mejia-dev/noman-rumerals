@@ -102,6 +102,23 @@ Test: "It will reject the entire input if X is surrounded by two matching charac
 Code: evalNumerals("IXI")
 Expected Output: "Invalid input. Numeral X should never be surrounded by two of the same numerals"
 
+
+//// Rules for L
+Test: "It will evaluate L to equal 50"
+Code: evalNumerals("L")
+Expected Output: 50
+
+Test: "It will reject the entire input if the number of L's is greater than 1 and will display an error"
+Code: evalNumerals("LL")
+Expected Output: "Invalid input. Numeral L should only occur once per input"
+
+Test: "It will reject the entire input if L is surrounded by two matching characters"
+Code: evalNumerals("CLC")
+Expected Output: "Invalid input. Numeral L should never be surrounded by two of the same numerals"
+
+
+
+
 Test: "It will evaluate 
 Code:
 Expected Output:
