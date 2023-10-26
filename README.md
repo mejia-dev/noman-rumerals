@@ -15,21 +15,21 @@ Code: evalNumerals("III")
 Use .split to turn "III" into ["I","I","I"] after converting to lowercase, before evaluating.
 Expected Output: 3
 
-Test: "It will define the empty function-scoped numeralTotal variable"
-Code: let numeralTotal = "";
+Test: "It will define the empty function-scoped numberTotal variable"
+Code: let numberTotal = "";
 
-Test: "It will interate through a foreach loop on each numeral, evaluate the numeral using the word rules below, then append output to numeralTotal"
+Test: "It will interate through a foreach loop on each numeral, evaluate the numeral using the word rules below, then append output to numberTotal"
 Code: evalNumerals("III")
 After converting to lowercase, after splitting: 
 ["i","i","i"].forEach(function(letter) {
   *run rules, return "resultNumber"*
-  numeralTotal.append(resultNumber + " + ");
+  numberTotal.append(resultNumber + " + ");
 })
 Expected Output: 3
 
-Test: "It will evaluate numeralTotal and return result"
-Code: eval(numeralTotal)
- *for testing, let numeralTotal = "1 + -1 + 2"*
+Test: "It will evaluate numberTotal and return result"
+Code: eval(numberTotal)
+ *for testing, let numberTotal = "1 + -1 + 2"*
 Expected Output: 2
 
 
