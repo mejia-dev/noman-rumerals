@@ -98,9 +98,9 @@ Test: "It will evaluate any X with a V or I character after it to equal 10"
 Code: evalNumerals("XI");
 Expected Output: 11
 
-Test: "It will reject the entire input if X is surrounded by two matching characters"
+Test: "It will reject the entire input if X is surrounded by two matching non-X characters"
 Code: evalNumerals("IXI")
-Expected Output: "Invalid input. Numeral X should never be surrounded by two of the same numerals"
+Expected Output: "Invalid input. Numeral X should never be surrounded by two of the same non-X numerals"
 
 
 //// Rules for L
@@ -142,9 +142,9 @@ Test: "It will evaluate any C with a L,X,V,or I character after it to equal 100"
 Code: evalNumerals("CI");
 Expected Output: 101
 
-Test: "It will reject the entire input if C is surrounded by two matching characters"
+Test: "It will reject the entire input if C is surrounded by two matching non-C characters"
 Code: evalNumerals("ICI")
-Expected Output: "Invalid input. Numeral C should never be surrounded by two of the same numerals"
+Expected Output: "Invalid input. Numeral C should never be surrounded by two of the same non-C numerals"
 
 
 //// Rules for D
@@ -161,8 +161,31 @@ Code: evalNumerals("CLC")
 Expected Output: "Invalid input. Numeral L should never be surrounded by two of the same numerals"
 
 
+//// Rules for M
+Test: "It will evaluate any M without a character after it to equal 1000"
+Code: evalNumerals("M")
+Expected Output: 1000
 
+Test: "It will evaluate any M with another M after it to equal 2000"
+Code: evalNumerals("MM")
+Expected Output: 2000
 
-Test: "It will evaluate 
-Code:
-Expected Output:
+Test: "It will evaluate any M with two M's after it to equal 3000"
+Code: evalNumerals("MMM")
+Expected Output: 3000
+
+Test: "It will reject the entire input if the number of M's in a row is greater than 3 and will display an error"
+Code: evalNumerals("MMMM")
+Expected Output: "Invalid input. More than three occurences of M in a row detected."
+
+Test: "It will evaluate any M with another character after it to equal 1000"
+Code: evalNumerals("MI");
+Expected Output: 1001
+
+Test: "It will reject the entire input if M is surrounded by two matching non-M characters"
+Code: evalNumerals("IMI")
+Expected Output: "Invalid input. Numeral M should never be surrounded by two of the same non-M numerals"
+
+Test: "It will reject the entire input if the total number of M's is greater than 4 and will display an error"
+Code: evalNumerals("MMMM")
+Expected Output: "Invalid input. More than three occurences of M in a row detected."
