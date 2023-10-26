@@ -4,10 +4,23 @@ function evalNumerals(input) {
   }
   input = input.toLowerCase();
   const numeralsList = input.split("");
-  let numberTotal = 0;
+  let numberTotal = "";
 
-  numeralsList.forEach((letter, location))
+  numeralsList.forEach(function(letter, pos) {
+    if (["i","x","c","m"].includes(letter)) {
+      const ixcmValues = {i:1,x:10,c:100,m:1000};
+      numberTotal += "This number is ixcm: " + pos + ". ";
+    } else if (["v","l","d"].includes(letter)) {
+      numberTotal += "This number is vld: " + pos + ". ";
+    } else {
+      return "Unknown error"
+    }
+
+
+
+    
+
+  })
 
   return numberTotal;
-
 }
