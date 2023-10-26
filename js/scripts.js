@@ -20,7 +20,7 @@ function evalNumerals(input) {
       let charAfter = numeralsList[pos + 1];
       if ((charAfter === charBefore) && (charBefore != undefined) && (charAfter != undefined)) {
         errorCounter += 1;
-        recentErrorMessage = "Invalid input. Numeral " + letter.toUpperCase() +" should never be surrounded by two of the same numerals"
+        recentErrorMessage += "Error " + errorCounter + ": Invalid input. Numeral " + letter.toUpperCase() + " should never be surrounded by two of the same numerals. "
       } else {
         numberTotal += vldValues[letter];
       }
