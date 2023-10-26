@@ -147,6 +147,21 @@ Code: evalNumerals("ICI")
 Expected Output: "Invalid input. Numeral C should never be surrounded by two of the same numerals"
 
 
+//// Rules for D
+Test: "It will evaluate D to equal 500"
+Code: evalNumerals("D")
+Expected Output: 500
+
+Test: "It will reject the entire input if the number of D's is greater than 1 and will display an error"
+Code: evalNumerals("DD")
+Expected Output: "Invalid input. Numeral D should only occur once per input"
+
+Test: "It will reject the entire input if L is surrounded by two matching characters"
+Code: evalNumerals("CLC")
+Expected Output: "Invalid input. Numeral L should never be surrounded by two of the same numerals"
+
+
+
 
 Test: "It will evaluate 
 Code:
