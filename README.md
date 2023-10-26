@@ -157,7 +157,7 @@ Code: evalNumerals("DD")
 Expected Output: "Invalid input. Numeral D should only occur once per input"
 
 Test: "It will reject the entire input if L is surrounded by two matching characters"
-Code: evalNumerals("CLC")
+Code: evalNumerals("CDC")
 Expected Output: "Invalid input. Numeral L should never be surrounded by two of the same numerals"
 
 
