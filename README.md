@@ -25,6 +25,7 @@ After converting to lowercase, after splitting:
   *run rules, return "resultNumber"*
   numeralTotal.append(resultNumber + " + ");
 })
+Expected Output: 3
 
 Test: "It will evaluate numeralTotal and return result"
 Code: eval(numeralTotal)
@@ -34,27 +35,27 @@ Expected Output: 2
 
 //// Rules for I
 Test: "It will evaluate any I without a character after it to equal 1"
-Code: evalNumerals("i")
+Code: evalNumerals("I")
 Expected Output: 1
 
 Test: "It will evaluate any I with another I after it to equal 2"
-Code: evalNumerals("ii")
+Code: evalNumerals("II")
 Expected Output: 2
 
 Test: "It will evaluate any I with two I's after it to equal 3"
-Code: evalNumerals("iii")
+Code: evalNumerals("III")
 Expected Output: 3
 
 Test: "It will reject the entire input if the number of I's in a row is greater than 3 and will display an error"
-Code: evalNumerals("iiii")
+Code: evalNumerals("IIII")
 Expected Output: "Invalid input. More than three occurences of I in a row detected."
 
 Test: "It will evaluate any I with a non-I character after it to equal -1"
-Code: evalNumerals("iv");
+Code: evalNumerals("IV");
 Expected Output: -1
 
 Test: "It will reject the entire input if the number of I's in a row BEFORE another numeral is greater than 1 and will display an error"
-Code: evalNumerals("iix")
+Code: evalNumerals("IIX")
 Expected Output: "Invalid input. Too many occurences of I in a row before another numeral."
 
 
@@ -67,21 +68,39 @@ Test: "It will reject the entire input if the number of V's is greater than 1 an
 Code: evalNumerals("VIV")
 Expected Output: "Invalid input. Numeral V should only occur once per input"
 
-Test: "It will evaluate 
-Code:
-Expected Output:
+Test: "It will reject the entire input if V is surrounded by two matching characters"
+Code: evalNumerals("IVI")
+Expected Output: "Invalid input. Numeral V should never be surrounded by two of the same numerals"
 
-Test: "It will evaluate 
-Code:
-Expected Output:
 
-Test: "It will evaluate 
-Code:
-Expected Output:
+//// Rules for X
+Test: "It will evaluate any X without a character after it to equal 10"
+Code: evalNumerals(X)
+Expected Output: 10
 
-Test: "It will evaluate 
-Code:
-Expected Output:
+Test: "It will evaluate any X with another X after it to equal 20"
+Code: evalNumerals("XX")
+Expected Output: 20
+
+Test: "It will evaluate any X with two X's after it to equal 30"
+Code: evalNumerals("XXX")
+Expected Output: 30
+
+Test: "It will reject the entire input if the number of X's in a row is greater than 3 and will display an error"
+Code: evalNumerals("XXXX")
+Expected Output: "Invalid input. More than three occurences of X in a row detected."
+
+Test: "It will evaluate any X with a non-X,V,or I character after it to equal -10"
+Code: evalNumerals("XL");
+Expected Output: -10
+
+Test: "It will evaluate any X with a V or I character after it to equal 10"
+Code: evalNumerals("XI");
+Expected Output: 11
+
+Test: "It will reject the entire input if X is surrounded by two matching characters"
+Code: evalNumerals("IXI")
+Expected Output: "Invalid input. Numeral X should never be surrounded by two of the same numerals"
 
 Test: "It will evaluate 
 Code:
